@@ -6,9 +6,11 @@ Oct 2, 2026 · @Ryan Angelo
 
 The program takes developers who know basic programming to building, validating, testing and version-controlling a typed REST API on Node.js in four weeks: 10 modules, about 80 hours. This Solution Design turns the PRD into a buildable plan covering architecture, stack, curriculum, capstone, environment, assessment, delivery and open risks. Its source is `nodejs-developer-training.md`, with versions verified on 2 October 2026.
 
+> Modules 1 through 9 live in the Build-to-Teach training repo. The capstone (Module 10) is maintained in a separate repository provided by the trainer; this document still covers it for curriculum-planning purposes, but that repo is the source of truth for its brief and rubric.
+
 The design rests on five choices:
 
-- **One running project.** The Task API is built in Module 5 and extended in Modules 7, 8 and 9. The capstone is a separate domain.
+- **One running project.** The Task API is built in Module 5 and extended in Modules 7, 8 and 9. The capstone is a separate domain, built and maintained in its own repository.
 - **Language ramp.** Plain modern JavaScript in Week 1, TypeScript from Week 2.
 - **Free tools only.** No paid licences and no Docker. SQLite is the only database used hands-on.
 - **Real dependencies in tests.** Integration tests run against the exported Express app and a real SQLite database.
@@ -151,9 +153,11 @@ Three principles shape the order:
 | M7 Prisma ORM and migrations | W3, D2-4 | 8 | Task API v2: Prisma schema from the M6 design; 2 or more migrations plus one hand-edited via `--create-only`; service layer; filters, sorting, pagination; seed script; Prisma error mapping | `migrate reset` plus the seed rebuilds the database; Bruno collection still green; explains `migrate dev` vs `migrate deploy` |
 | M8 Zod validation and type inference | W3, D4-5 | 6 | Task API v3: Zod schemas for create, update, list query and params; typed `validate` middleware; env validation; consistent 400 payloads | v3 merged by PR; no manual `if (!body.title)` checks; invalid input never reaches Prisma (Week 3 Friday gate) |
 | M9 Integration testing with Jest and Supertest | W4, D1-2 | 8 | Task API v4: 25 or more integration tests, a GitHub Actions workflow, a coverage report | Green CI on a PR; 80% or more coverage on routes and services; suite passes in random order (`--randomize`) |
-| M10 Capstone project | W4, D3-5 | 12 | Independent API in a new domain (see Capstone project design) | Rubric score of 70 or more; 10-minute demo plus Q&A (Week 4 Friday gate) |
+| M10 Capstone project (separate repo) | W4, D3-5 | 12 | Independent API in a new domain (see Capstone project design) | Rubric score of 70 or more; 10-minute demo plus Q&A (Week 4 Friday gate) |
 
 ## Capstone project design
+
+> Maintained in a separate repository provided by the trainer, not in the Modules 1–9 training repo. This section documents the agreed scope for curriculum-planning purposes; the trainer's repo is the source of truth for the brief, rubric, and any starter material.
 
 The capstone (Module 10, 12 hours over Days 3 to 5 of Week 4) has each trainee independently build, test and demo a complete API in a new domain. A score of 70 or more out of 100 passes.
 
@@ -257,7 +261,7 @@ Assessment has three layers, and nine of the ten PRD competencies have a named c
 | --- | --- | --- |
 | Module checkpoint | End of each module | The checkpoint listed in the module (see Curriculum design) |
 | Weekly gate | Fridays: Module 3, Module 5, Module 8, then the capstone demo | Pass or fail against the module checklist |
-| Capstone | Week 4, Days 3 to 5 | 100-point rubric; 70 or more passes |
+| Capstone (separate repo) | Week 4, Days 3 to 5 | 100-point rubric; 70 or more passes |
 
 | # | Competency | Taught in | Evidence |
 | --- | --- | --- | --- |
@@ -269,7 +273,7 @@ Assessment has three layers, and nine of the ten PRD competencies have a named c
 | 6 | Create, edit and apply Prisma migrations, and explain `migrate dev` vs `migrate deploy` | M7 | M7 checkpoint: `migrate reset` plus seed rebuilds the database; trainee explains the difference |
 | 7 | Validate all untrusted input with Zod and return consistent 400 responses | M8 | M8 checkpoint: no manual checks remain; invalid input never reaches Prisma |
 | 8 | Write isolated integration tests with Jest and Supertest against a real test database | M9 | M9 checkpoint: green CI, 80% or more coverage, suite passes in random order |
-| 9 | Work in a GitHub pull-request workflow with CI | M1, M9, M10 | M9: green CI on a PR. M10: at least 8 PRs and one peer review given and received |
+| 9 | Work in a GitHub pull-request workflow with CI | M1, M9, M10 | M9: green CI on a PR. M10 (separate repo): at least 8 PRs and one peer review given and received |
 | 10 | Explain what changes when moving from SQLite to PostgreSQL or MongoDB | M7 (concept only) | None. No checkpoint or rubric line tests it |
 
 The PRD also leaves two rules undefined: what happens after a failed Friday gate, and what happens to a capstone under 70. Both are in the decision register.
@@ -316,7 +320,7 @@ Seven items need program-owner sign-off before the first cohort, and the highest
 | P3 | Task API spec and error contract | Write a one-page spec: Task fields including `status`, the endpoints, whether `users` and `tags` are exposed (Module 6 designs four tables, Module 5 lists only `/tasks`), and the error JSON shape | Proposed |
 | P4 | Remediation after a failed Friday gate or a capstone under 70 | Program owner defines who retests, when, and what a trainee under 70 receives | Proposed |
 | P5 | Capstone pass rule and the Bruno collection | Treat the must-haves as a gate in addition to the 70-point score, and score the Bruno collection under Documentation and demo | Proposed |
-| P6 | Capstone starter and demo format | Capstone needs 3 or more models, 25 or more tests, 3 or more migrations, 8 or more PRs, CI, a README and a demo in 12 hours. The Task API spans 34 module hours (M5, M7, M8, M9), including instruction. Decide whether to supply a starter skeleton (config, errors, middleware, CI), and confirm cohort size so 10-minute demos plus Q&A fit Day 5 | Proposed |
+| P6 | Capstone starter and demo format | Capstone needs 3 or more models, 25 or more tests, 3 or more migrations, 8 or more PRs, CI, a README and a demo in 12 hours. The Task API spans 34 module hours (M5, M7, M8, M9), including instruction. Decide whether to supply a starter skeleton (config, errors, middleware, CI), and confirm cohort size so 10-minute demos plus Q&A fit Day 5. This decision belongs to whoever maintains the separate capstone repository | Proposed |
 | P7 | Assess competency 10 | Add a short written or oral question on SQLite versus PostgreSQL and MongoDB to the Module 7 checkpoint | Proposed |
 
 ### Risks
@@ -351,7 +355,7 @@ The design holds if the pinned versions stay as verified on 2 October 2026 and e
 
 1. Resolve the Proposed rows in the decision register.
 2. Finish a reference solution for every lab: Async toolkit, `log-report` CLI, bare HTTP server, Task API v1 to v4, and one capstone exemplar.
-3. Author the supporting materials: the 20 graded SQL exercises with answers, the Bruno collections, and the capstone brief and rubric sheet.
+3. Author the supporting materials: the 20 graded SQL exercises with answers, and the Bruno collections. The capstone brief and rubric sheet are authored and maintained in the trainer's separate capstone repository.
 4. Pin versions in `.nvmrc` and `package.json`, then run the trainer pre-flight checklist on each OS.
 5. Fix what the dry run finds, then freeze versions for the cohort.
 

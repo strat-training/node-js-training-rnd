@@ -15,7 +15,7 @@
 - **SQLite is the only database used hands-on.** PostgreSQL and MongoDB are covered conceptually in Module 7 (no labs).
 - **Bruno** for manual API testing. Collections are plain-text files committed to the repo.
 - **JavaScript first, TypeScript from Week 2.** Week 1 is plain modern JavaScript; everything after Module 4 is TypeScript.
-- **One running project.** The **Task API** is built in Module 5 and extended in Modules 7, 8, and 9. The capstone (Module 10) is a different domain, built independently.
+- **One running project.** The **Task API** is built in Module 5 and extended in Modules 7, 8, and 9. The capstone (Module 10) is a different domain, built independently, and its materials (brief, rubric, starter) are maintained in a separate repository provided by the trainer — not in the Modules 1–9 training repo.
 - **Daily rhythm (suggested):** 1.5 hrs guided instruction, 2 hrs lab, 0.5 hr review and Q&A.
 
 ---
@@ -65,7 +65,7 @@
 | TypeScript for Node.js | M4, M5 |
 | TypeScript with Prisma | M7 |
 | TypeScript with Zod; Zod validation with type inference | M8 |
-| Git + GitHub | M1 (used in every module; formalised in M9 CI and M10) |
+| Git + GitHub | M1 (used in every module; formalised in M9 CI and in the capstone, M10, maintained separately) |
 
 ---
 
@@ -287,6 +287,10 @@
 ### Module 10: Capstone Project
 **Week 4 · Days 3–5 · 12 hours**
 
+> Maintained in a separate repository provided by the trainer, not in the Modules 1–9 training
+> repo. This section documents the agreed scope for curriculum-planning purposes; the trainer's
+> repo is the source of truth for the brief, rubric, and any starter material.
+
 **Objective.** Independently build, test, and present a complete API in a new domain using the whole stack.
 
 **Choose one domain:** Library / Bookshelf (books, authors, loans) · Expense Tracker (users, categories, expenses) · Event RSVP (events, attendees, registrations) · Support Tickets (tickets, comments, labels) · Recipe Book (recipes, ingredients, tags).
@@ -326,7 +330,7 @@
 ## 6. Assessment and completion
 
 - **Weekly checkpoints** (Friday) are pass/fail against the checklist in each module.
-- **Capstone** is graded with the rubric above; 70+ passes.
+- **Capstone** is graded with the rubric above (maintained in the trainer's separate capstone repository); 70+ passes.
 - **Competency checklist.** On completion, a trainee can:
   1. Explain the event loop and write correct async/await code, including parallel work and error handling.
   2. Structure a Node.js project with ES modules and manage dependencies with npm safely.

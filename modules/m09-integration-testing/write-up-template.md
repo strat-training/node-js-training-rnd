@@ -1,8 +1,8 @@
 # M09 Write-Up — Integration Testing with Jest + Supertest (Task API v4)
 
 > Fill this in as you go. Write it so a trainee starting this stage next cohort could follow your
-> path on their own. The M10 capstone has no reference material except what you write here, so be
-> thorough.
+> path on their own. The capstone (M10, provided separately by your trainer) has no reference
+> material except what you write here, so be thorough.
 
 ## What I built
 

@@ -1,10 +1,11 @@
 # Node.js Developer Training
 
 This repo holds the Build-to-Teach version of the Node.js Developer Training Program: nine training
-stages in `modules/` (M01–M09), followed by a capstone (M10). The format is different on purpose:
-instead of being taught the material, the trainee builds toward each stage's deliverable from a
-brief, and writes up how they did it as they go. The write-up is what ends up teaching the next
-cohort.
+stages in `modules/` (M01–M09). The format is different on purpose: instead of being taught the
+material, the trainee builds toward each stage's deliverable from a brief, and writes up how they
+did it as they go. The write-up is what ends up teaching the next cohort.
+
+The program's capstone (M10) is provided separately by the trainer, in its own repository.
 
 A note on words: a **module** in this repository is a training stage, not a JavaScript/Node.js
 module. Stages M02 and M03 are the ones that actually teach what a JavaScript/Node.js module is
@@ -15,7 +16,6 @@ module. Stages M02 and M03 are the ones that actually teach what a JavaScript/No
 | Path | What it holds |
 | --- | --- |
 | `modules/` | The nine stage folders (M01–M09), each with a brief, a checklist, and a write-up template |
-| `modules/m10-capstone/` | The capstone, with its own brief, checklist, and write-up template |
 
 ## Ground rules (every stage)
 
@@ -67,11 +67,10 @@ problems early instead of in a finished draft nobody wants to redo.
 | --- | --- | --- |
 | `brief.md` | Your trainer | Objective, scope, stack constraints, the deliverable, a lab (goal, steps, what to capture), and definition of done. No answers. Do not edit it. |
 | `write-up-template.md` | You | Blank at first; filled in as you build, not after. |
-| `tasks.md` | Generated from `brief.md` via `/trainee-task-planner` | An ordered checklist mirroring the brief — setup, then research (M02–M09), then build (Day 3/4/5 for the M10 capstone), then verify, then write-up. You tick the boxes; it holds no answers and no steps you weren't already told. |
+| `tasks.md` | Generated from `brief.md` via `/trainee-task-planner` | An ordered checklist mirroring the brief — setup, then research (M02–M09), then build, then verify, then write-up. You tick the boxes; it holds no answers and no steps you weren't already told. |
 
 Your Node.js code lives outside this repository, in your own GitHub repo (the public training repo
-you set up in M01). Link it from the header of your write-up. The capstone folder has the same
-three files.
+you set up in M01). Link it from the header of your write-up.
 
 ## Stages
 
@@ -85,21 +84,24 @@ three files.
 | [M06](modules/m06-sql-fundamentals-sqlite/brief.md) | SQL Fundamentals with SQLite | Relational design, joins, transactions, SQL injection | The schema design (translated into Prisma in M07) |
 | [M07](modules/m07-prisma-orm-migrations/brief.md) | Prisma ORM & Migrations | Migrations, the typed client, Prisma error mapping | Task API v2 |
 | [M08](modules/m08-zod-validation/brief.md) | Zod Validation & Type Inference | Runtime validation, type inference from schemas | Task API v3 |
-| [M09](modules/m09-integration-testing/brief.md) | Integration Testing with Jest + Supertest | Real-database integration tests, CI | Task API v4 (handed off to the M10 capstone) |
-| [M10](modules/m10-capstone/brief.md) | Capstone Project | Independent API, authentication, a provable concurrency fix | — (terminal stage) |
+| [M09](modules/m09-integration-testing/brief.md) | Integration Testing with Jest + Supertest | Real-database integration tests, CI | Task API v4 (handed off to the capstone) |
+
+The capstone (M10) is the terminal stage of the program — an independent API with authentication
+and a provable concurrency fix — but its brief, checklist, and write-up template are not in this
+repo; your trainer provides them separately.
 
 Work the stages in order. Later stages build on earlier ones: M05's Task API carries forward
 through M07, M08, and M09 (v1 → v4), and M06's schema design is what M07 translates into Prisma.
 TypeScript (M04) comes before Express (M05) so the API is typed from the start; SQL (M06) comes
 before Prisma (M07) so migrations aren't magic; hand-written validation (M05) comes before Zod
 (M08) so the payoff is felt. Folder names are descriptive; each brief refers to other stages by
-module ID (M01–M10).
+module ID (M01–M10), even though only M01–M09 live in this repo.
 
 ## Assessment
 
 - Every module ends in a checkpoint (see that stage's `brief.md`).
 - The capstone (M10) is scored out of 100 against a fixed rubric; 70 or more passes. The rubric
-  lives in `modules/m10-capstone/brief.md` — it is the one place point values are specified, and it
-  is not a solution, it is how your finished API gets graded.
+  lives in the trainer-provided capstone repo's `brief.md` — it is the one place point values are
+  specified, and it is not a solution, it is how your finished API gets graded.
 - By the end of the program you should be able to evidence all ten competencies listed in the PRD's
   Section 6 — each module's `brief.md` names which one(s) it builds toward.

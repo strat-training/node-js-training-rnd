@@ -69,5 +69,6 @@ database.
       `--randomize` run exposed.
 - [ ] "Checkpoint evidence": green CI on your PR, the suite passing with `--randomize`, your
       coverage report meeting 80%+, and `PATCH /tasks/:id/complete` added test-first.
-- [ ] Close out "What I'd do differently" — write this one especially carefully, since the M10
-      capstone has no reference material except what you write here.
+- [ ] Close out "What I'd do differently" — write this one especially carefully, since the capstone
+      (M10, provided separately by your trainer) has no reference material except what you write
+      here.
